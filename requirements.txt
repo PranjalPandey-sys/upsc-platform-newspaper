@@ -1,0 +1,21 @@
+# UPSC Newspaper Intelligence Engine — Dependencies
+# Python 3.11.9 (same as main bot — matches Render environment)
+
+# ── Web framework ──────────────────────────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+
+# ── AI ─────────────────────────────────────────────────────────────────────────
+openai==1.12.0          # Gemini via OpenAI-compatible endpoint
+
+# ── RSS & content ──────────────────────────────────────────────────────────────
+feedparser==6.0.11      # RSS/Atom feed parsing
+trafilatura==1.9.0      # Article text extraction from URLs
+
+# ── Scheduling ─────────────────────────────────────────────────────────────────
+apscheduler==3.10.4
+
+# ── Utilities ──────────────────────────────────────────────────────────────────
+python-dotenv==1.0.1    # .env file support for local development
+httpx==0.27.0           # Async HTTP (used internally by openai)

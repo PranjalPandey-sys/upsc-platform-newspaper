@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: upsc-newspaper-engine
+    runtime: python
+    pythonVersion: "3.11.9"
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: API_KEYS
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_REPO
+        sync: false
+      - key: DEBUG
+        value: "false"
+    disk:
+      name: newspaper-engine-data
+      mountPath: /data
+      sizeGB: 1
